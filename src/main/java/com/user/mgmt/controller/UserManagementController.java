@@ -19,6 +19,8 @@ import com.user.mgmt.entity.User;
 import com.user.mgmt.exception.UserNotFoundException;
 import com.user.mgmt.service.UserManagementService;
 
+import jakarta.validation.Valid;
+
 @RestController
 @RequestMapping("/api")
 public class UserManagementController {
@@ -34,7 +36,7 @@ public class UserManagementController {
 	}
 
 	@PostMapping(path = "/user/create")
-	public ResponseEntity<?> getUserById(@RequestBody User user) {
+	public ResponseEntity<?> getUserById(@Valid @RequestBody User user) {
 		User savedUser = userManagementService.createUser(user);
 		return ResponseEntity.status(HttpStatus.CREATED).body(Map.of("success", true, "message",
 				"User created successfully", "status", HttpStatus.CREATED.value(), "data", savedUser));

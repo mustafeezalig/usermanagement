@@ -6,6 +6,10 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.Max;
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Size;
 
 @Entity
 @Table(name = "user_data")
@@ -15,6 +19,7 @@ public class User {
 	@Column(name = "userId")
 	private Integer userId;
 	@Column(name = "name")
+	@Size(min = 2,message = "Name is required")
 	private String name;
 	@Override
 	public String toString() {
@@ -47,6 +52,7 @@ public class User {
 		this.phone = phone;
 	}
 	@Column(name = "phone")
+	@Size(max = 10,message = "Size should be max 10 digits")
 	private String phone;
 
 }
