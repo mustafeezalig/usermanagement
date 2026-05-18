@@ -6,15 +6,21 @@ import org.springframework.stereotype.Service;
 
 import com.user.mgmt.entity.User;
 import com.user.mgmt.exception.UserNotFoundException;
+import com.user.mgmt.mapper.UserMapper;
 import com.user.mgmt.repo.UserManagementRepository;
+import com.user.mgmt.response.UserResponse;
+
+import lombok.RequiredArgsConstructor;
 
 @Service
+@RequiredArgsConstructor
 public class UserManagementService {
 	private final UserManagementRepository userRepository;
-
-	public UserManagementService(UserManagementRepository userRepository) {
-	        this.userRepository = userRepository;
-	    }
+	 private final UserMapper userMapper;
+		/*
+		 * public UserManagementService(UserManagementRepository userRepository) {
+		 * this.userRepository = userRepository; }
+		 */
 
 	public User getUserById(Long id) throws UserNotFoundException {
 
@@ -26,7 +32,8 @@ public class UserManagementService {
 		return userRepository.save(user);
 	}
 
-	public List<User> getUsers() {
-		return userRepository.findAll();
+	public List<UserResponse> getUsers() {
+		return userMapper.toResponseList(userRepository.findAll());
+		
 	}
 }

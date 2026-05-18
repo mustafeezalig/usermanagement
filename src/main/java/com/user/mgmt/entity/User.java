@@ -1,5 +1,7 @@
 package com.user.mgmt.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -13,6 +15,7 @@ import jakarta.validation.constraints.Size;
 
 @Entity
 @Table(name = "user_data")
+@JsonIgnoreProperties({"email"})
 public class User {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)

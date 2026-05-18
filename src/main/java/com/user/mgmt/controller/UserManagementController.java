@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.user.mgmt.entity.User;
 import com.user.mgmt.exception.UserNotFoundException;
+import com.user.mgmt.response.UserResponse;
 import com.user.mgmt.service.UserManagementService;
 
 import jakarta.validation.Valid;
@@ -44,8 +45,8 @@ public class UserManagementController {
 
 	@GetMapping(path = "/users")
 	public ResponseEntity<?> getUserById() throws UserNotFoundException {
-		List<User> users = userManagementService.getUsers();
+		List<UserResponse> userResponse = userManagementService.getUsers();
 		return ResponseEntity.status(HttpStatus.OK).body(Map.of("success", true, "message", "User fetched successfully",
-				"status", HttpStatus.OK.value(), "data", users));
+				"status", HttpStatus.OK.value(), "data", userResponse));
 	}
 }
