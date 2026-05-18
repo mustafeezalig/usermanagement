@@ -1,1 +1,8 @@
 1. Filtering like static and dynamic , good to learn
+2. Actuators : http://localhost:8080/actuator
+http://localhost:8080/actuator/beans
+3. Swagger or openai http://localhost:8080/swagger-ui.html
+
+4.Post not working well
+
+5.https://github.com/in28minutes/spring-microservices-v3/blob/main/02.restful-web-services/01-step-by-step-changes/v2.md#step-35

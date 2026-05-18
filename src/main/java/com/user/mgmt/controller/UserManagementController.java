@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.user.mgmt.entity.Post;
 import com.user.mgmt.entity.User;
 import com.user.mgmt.exception.UserNotFoundException;
 import com.user.mgmt.response.UserResponse;
@@ -49,4 +50,6 @@ public class UserManagementController {
 		return ResponseEntity.status(HttpStatus.OK).body(Map.of("success", true, "message", "User fetched successfully",
 				"status", HttpStatus.OK.value(), "data", userResponse));
 	}
+
+	
 }
