@@ -3,6 +3,6 @@
 http://localhost:8080/actuator/beans
 3. Swagger or openai http://localhost:8080/swagger-ui.html
 
-4.Post not working well
+4.How will you secure api endpoints
 
 5.https://github.com/in28minutes/spring-microservices-v3/blob/main/02.restful-web-services/01-step-by-step-changes/v2.md#step-35
