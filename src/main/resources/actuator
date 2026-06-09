@@ -1,0 +1,8 @@
+https://chatgpt.com/c/6a277a28-12f0-8323-b016-fde02cafb3ab
+#property for actuator to show all endpoints http://localhost:8081/actuator
+http://localhost:8081/actuator/health
+{"groups":["liveness","readiness"],"status":"UP"}
+
+If you expected more details
+If you were expecting information such as database, disk space, or Redis health, configure:
+management.endpoint.health.show-details=always

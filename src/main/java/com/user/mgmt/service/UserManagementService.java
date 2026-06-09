@@ -36,4 +36,8 @@ public class UserManagementService {
 		return userMapper.toResponseList(userRepository.findAll());
 		
 	}
+
+	public void deleteUser(String userId) {
+		 userRepository.deleteById(Long.valueOf(userId));
+	}
 }
