@@ -71,7 +71,7 @@ public class User {
 		this.phone = phone;
 	}
 	@Column(name = "phone")
-	@Size(max = 10,message = "Size should be max 10 digits")
+	//@Size(max = 10,message = "Size should be max 10 digits")
 	private String phone;
 
 }
